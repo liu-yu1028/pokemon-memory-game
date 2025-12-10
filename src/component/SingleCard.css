@@ -1,0 +1,52 @@
+.card {
+  position: relative;
+}
+
+.card > div {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 6px;
+  backface-visibility: hidden;
+}
+
+/* FRONT */
+.card .front {
+  transform: rotateY(90deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition-delay: 0.2s;
+}
+
+/* FLIPPED FRONT */
+.flipped .front {
+  transform: rotateY(0deg);
+}
+
+/* BACK */
+.card .back {
+  transform: rotateY(0deg);
+  transition: all 0.2s ease-in;
+}
+
+/* FLIPPED BACK */
+.flipped .back {
+  transform: rotateY(90deg);
+}
+
+.matched {
+  animation: match-flash 0.6s ease;
+}
+
+@keyframes match-flash {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.15); filter: brightness(1.6); }
+  100% { transform: scale(1); filter: brightness(1); }
+}

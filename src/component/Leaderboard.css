@@ -1,0 +1,367 @@
+/* LeaderboardModal.css */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 2px solid #ecf0f1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.modal-close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-loading {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+  font-size: 18px;
+}
+
+/* 難度篩選區域 */
+.filter-section {
+  padding: 20px 24px;
+  border-bottom: 1px solid #ecf0f1;
+  background: #f8f9fa;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.filter-description {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.filter-description p {
+  margin: 0;
+  font-size: 14px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  color: #7f8c8d;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+}
+
+.filter-btn.normal.active {
+  background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+  border-color: #b3ffa7;
+}
+
+.filter-btn.hard.active {
+  background: linear-gradient(135deg, #cb2d3e 0%, #ef473a 100%);
+  border-color: #e89097;
+}
+
+/* 分頁控制 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 20px 0;
+  border-top: 1px solid #ecf0f1;
+}
+
+.page-btn {
+  padding: 8px 16px;
+  background: white;
+  border: 2px solid #667eea;
+  color: #667eea;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.page-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 8px;
+}
+
+.page-number {
+  width: 36px;
+  height: 36px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  color: #7f8c8d;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.page-number:hover {
+  border-color: #667eea;
+  color: #667eea;
+  transform: scale(1.1);
+}
+
+.page-number.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+}
+
+.page-info {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.modal-loading {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+  font-size: 18px;
+}
+
+.no-records-modal {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.no-records-modal p {
+  font-size: 18px;
+  color: #7f8c8d;
+  margin: 10px 0;
+}
+
+.no-records-modal .hint {
+  font-size: 14px;
+  color: #95a5a6;
+}
+
+.no-records-modal .hint-sub {
+  font-size: 13px;
+  color: #bdc3c7;
+  margin-top: 15px;
+}
+
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.modal-table thead {
+  background: linear-gradient(135deg, #9cecfb 0%, #65c7f7 100%);
+  color: white;
+}
+
+.modal-table th {
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modal-table td {
+  padding: 14px 12px;
+  text-align: center;
+  border-bottom: 1px solid #ecf0f1;
+  font-size: 15px;
+}
+
+.modal-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.modal-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.modal-table .best-record {
+  background: linear-gradient(135deg, #f7e477 0%, #eed74f 100%);
+  font-weight: 600;
+}
+
+.modal-table .best-record:hover {
+  background: linear-gradient(135deg, #eed74f 0%, #f7e477 100%);
+}
+
+.modal-table .rank {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.modal-table .time {
+  color: #e74c3c;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.modal-table .date {
+  color: #7f8c8d;
+  font-size: 13px;
+}
+
+.difficulty-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.difficulty-tag.normal {
+  background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+  color: #fff;
+}
+
+.difficulty-tag.hard {
+  background: linear-gradient(135deg, #cb2d3e 0%, #ef473a 100%);
+  color: #fff;
+}
+
+/* 手機版適配 */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    max-height: 85vh;
+  }
+
+  .modal-header {
+    padding: 16px 20px;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+  }
+
+  .modal-body {
+    padding: 16px;
+  }
+
+  .modal-table th,
+  .modal-table td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .modal-table .rank {
+    font-size: 18px;
+  }
+
+  .modal-table .time {
+    font-size: 15px;
+  }
+
+  .modal-table .date {
+    font-size: 11px;
+  }
+}

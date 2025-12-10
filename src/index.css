@@ -1,0 +1,12 @@
+  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+  font-family: Raleway, sans-serif;
+  margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+  background: linear-gradient(135deg, #f6e652 0%, #f6bd20 50%, #f59e0b 100%);
+  background-attachment: fixed;
+  color: #000000;
+  min-width: 100vh;
+}

@@ -1,0 +1,408 @@
+.App {
+  max-width: 860px;
+  margin: 10px auto;
+  padding: 0 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  color: #7c3aed;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.title svg {
+  font-size: 35px;
+  transform: scale(3); 
+  color: #7c3aed;
+  margin-right: 50px;
+  display: inline-block;
+}
+
+/* 使用者 */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6b21a8;
+}
+
+.user-email{
+  font-size: 1rem;
+}
+
+/* 通用按鈕 */
+button {
+  background: none;
+  border: 2px solid #000000;
+  padding: 6px 10px;
+  border-radius: 4px;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+/* 一般按鈕 */
+.control button {
+  background: none;
+  border: 2px solid #000000;
+  color: #000000;
+}
+
+
+.control button:hover {
+  background: #ee1515;
+  color: #f0f0f0;
+}
+
+.control button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 登出按鈕 */
+.logout-button {
+  padding: 4px, 12px;
+  font-size: 0.9rem;
+  border: 2px solid #6b21a8;
+  color: #6b21a8;
+}
+.logout-button:hover {
+  background: #ec4899;
+}
+
+/*排行榜按鈕*/
+.leaderboard-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.leaderboard-button:hover {
+  transform: translateY(-2px);
+  background: #7c3aed;
+}
+
+.leaderboard-button:active {
+  transform: translateY(0);
+}
+
+/* 控制區域 */
+.control {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.stats {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.control-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.control-right {
+  display: flex;
+  align-items: center;
+}
+
+/* 切換難度按鈕 */
+.change-difficulty-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  background: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.change-difficulty-btn:hover {
+  background: #7f8c8d;
+  transform: translateY(-2px);
+}
+
+/* 難度徽章 */
+.difficulty-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.difficulty-badge.normal {
+  background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+  color: white;
+}
+
+.difficulty-badge.hard {
+  background: linear-gradient(135deg, #cb2d3e 0%, #ef473a 100%);
+  color: white;
+}
+
+
+/* 卡片網格 */
+.card-grid {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+}
+
+.card-grid.hard-mode {
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  max-width: 900px;
+}
+
+/* 倒數計時 */
+.countdown {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  font-weight: bold;
+  animation: pop 1s ease;
+}
+
+@keyframes pop {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+/* 難度選擇遮罩 */
+.difficulty-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.difficulty-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease;
+}
+
+.difficulty-cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.difficulty-modal h2 {
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #2c3e50;
+}
+
+.difficulty-options {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.difficulty-card {
+  background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+  padding: 30px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.difficulty-card.hard {
+  background: linear-gradient(135deg, #cb2d3e 0%, #ef473a 100%);
+}
+
+.difficulty-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.difficulty-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.difficulty-card h3 {
+  margin: 15px 0;
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+}
+
+.difficulty-card p {
+  color: white;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.difficulty-desc {
+  font-weight: 600;
+  margin-top: 15px !important;
+}
+
+.difficulty-example {
+  font-size: 14px !important;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+/* 完成訊息遮罩 */
+.congrats-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.congrats-message {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.5s ease;
+  max-width: 400px;
+  width: 90%;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.congrats-message h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.congrats-message p {
+  font-size: 18px;
+  margin: 15px 0;
+  color: #34495e;
+}
+
+.congrats-message strong {
+  color: #e74c3c;
+  font-size: 22px;
+}
+
+.congrats-message .saved-text {
+  color: #27ae60;
+  font-weight: 600;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.difficulty-complete {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.difficulty-complete.normal {
+  background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+  color: white;
+}
+
+.difficulty-complete.hard {
+  background: linear-gradient(135deg, #cb2d3e 0%, #ef473a 100%);
+  color: white;
+}
+
+.close-button {
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.close-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.close-button:active {
+  transform: translateY(0);
+}

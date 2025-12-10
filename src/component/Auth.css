@@ -1,0 +1,135 @@
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box; 
+}
+.auth-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.auth-title {
+  text-align: center;
+  color: #333;
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: #666;
+  margin: 0 0 30px 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.auth-error {
+  background-color: #fee;
+  color: #c33;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #fcc;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.input {
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+  font-family: inherit;
+}
+
+.input:focus {
+  border-color: #f6bd20;
+}
+
+.auth-button {
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  background-color: #f6e652;
+  border: 2px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.auth-button:hover:not(:disabled) {
+  background-color: #f6bd20;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(246, 189, 32, 0.4);
+}
+
+.auth-button-disabled {
+  background-color: #fef3c7;
+  color: #92400e;
+  cursor: not-allowed;
+  border-color: #fbbf24;
+}
+
+.auth-button:disabled {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border-color: #fbbf24 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.auth-link {
+  margin-top: 20px;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.link {
+  color: #7c3aed;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #f59e0b;
+  text-decoration: underline;
+}
+.auth-title svg {
+  font-size: 32px;
+  color: #f00000;
+  vertical-align: middle;
+  margin-right: 8px;
+}
