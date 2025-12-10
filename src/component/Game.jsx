@@ -53,7 +53,7 @@ const hardCards = [
   { src: "/img/torchic.png", group: "torchic", matched: false },
   { src: "/img/blaziken-f.png", group: "torchic", matched: false },
   { src: "/img/mudkip.png", group: "mudkip", matched: false },
-  { src: "/img/marshtomp.png", group: "mudkip", matched: false },
+  { src: "/img/swampert.png", group: "mudkip", matched: false },
   { src: "/img/turtwig.png", group: "turtwig", matched: false },
   { src: "/img/torterra.png", group: "turtwig", matched: false },
   { src: "/img/chimchar.png", group: "chimchar", matched: false },
