@@ -263,7 +263,7 @@ export default function Game() {
             <div className="difficulty-card hard" onClick={() => selectDifficulty("hard")}>
               <h3>困難模式</h3>
               <p>30張卡片（15對）</p>
-              <p className="difficulty-example">二階 → 三階進化</p>
+              <p className="difficulty-example">一階 → 三階進化</p>
             </div>
           </div>
         </div>
